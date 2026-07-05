@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(python3 -c \"import json,sys; v=json.load\\(sys.stdin\\); print\\('\\\\n'.join\\([x for x in v if x.startswith\\('14.'\\) or x.startswith\\('15.'\\)][-15:]\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; v=json.load\\(sys.stdin\\); print\\('\\\\n'.join\\([x for x in v if \\(x.startswith\\('14.'\\) or x.startswith\\('15.'\\)\\) and 'canary' not in x and 'rc' not in x and 'beta' not in x][-20:]\\)\\)\")",
+      "Bash(npx next *)",
+      "Bash(mkdir -p \"/Users/jacobohenao/Desktop/Synapse Analytics/.claude\" && lsof -i :3000 2>/dev/null | head -3; echo \"---\"; ls \"/Users/jacobohenao/Desktop/Synapse Analytics\")"
+    ]
+  }
+}
