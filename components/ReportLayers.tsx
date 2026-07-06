@@ -6,7 +6,6 @@ import Reveal from "./Reveal";
 const LAYERS = [
   {
     icon: Zap,
-    time: "5 segundos",
     title: "Veredicto",
     body: "GO / NO-GO / AJUSTAR, con score de preparación de mercado e intención de compra.",
     bullets: [
@@ -17,7 +16,6 @@ const LAYERS = [
   },
   {
     icon: LineChart,
-    time: "5 minutos",
     title: "Inteligencia accionable",
     body: "Los números que necesitas para ajustar producto, precio y target antes de lanzar.",
     bullets: [
@@ -28,7 +26,6 @@ const LAYERS = [
   },
   {
     icon: FileCheck2,
-    time: "30 minutos",
     title: "Trazabilidad auditable",
     body: "Metodología completa y fuente por cada variable — todo reproducible y auditable.",
     bullets: [
@@ -62,13 +59,8 @@ export default function ReportLayers() {
             return (
               <Reveal key={layer.title} delay={i * 0.08}>
                 <div className="group relative h-full rounded-md border border-hairline bg-obsidian p-8 transition-all hover:border-accent/50 hover:shadow-glow-accent">
-                  <div className="flex items-center justify-between">
-                    <div className="rounded-md border border-hairline p-2.5 text-accent group-hover:border-accent/50 transition-colors">
-                      <Icon size={20} strokeWidth={1.6} />
-                    </div>
-                    <span className="font-mono text-[11px] tracking-widest uppercase text-muted">
-                      {layer.time}
-                    </span>
+                  <div className="inline-flex rounded-md border border-hairline p-2.5 text-accent group-hover:border-accent/50 transition-colors">
+                    <Icon size={20} strokeWidth={1.6} />
                   </div>
 
                   <h3 className="mt-8 font-black tracking-tightest text-2xl leading-tight">

@@ -47,7 +47,7 @@ export default function Footer() {
             © 2026 Synapse Analytics. Todos los derechos reservados.
           </p>
           <p className="font-mono text-[11px] tracking-widest uppercase text-muted">
-            Bogotá · Colombia
+            Medellín · Colombia
           </p>
         </div>
       </div>
