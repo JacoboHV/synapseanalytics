@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-hairline bg-obsidian">
       {/* Top bar */}
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-10 pb-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+        <div className="flex items-center justify-between gap-6">
           {/* Have a project in mind */}
           <div className="flex flex-col gap-3">
             <p className="font-mono text-xs sm:text-sm tracking-widest uppercase text-titanium">
@@ -26,31 +26,11 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Instagram */}
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hidden md:block text-center font-mono text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
-          >
-            Instagram
-          </a>
-
-          {/* LinkedIn */}
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hidden md:block text-center font-mono text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
-          >
-            LinkedIn
-          </a>
-
           {/* Back to top */}
           <button
             type="button"
             onClick={scrollToTop}
-            className="group flex items-center justify-end gap-3 font-mono text-xs sm:text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
+            className="group flex items-center gap-3 font-mono text-xs sm:text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-titanium group-hover:border-accent group-hover:bg-accent transition-colors">
               <svg
@@ -72,26 +52,6 @@ export default function Footer() {
             </span>
             Volver arriba
           </button>
-        </div>
-
-        {/* Mobile-only social links */}
-        <div className="mt-6 flex md:hidden gap-6 font-mono text-xs tracking-widest uppercase text-muted">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hover:text-titanium transition-colors"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hover:text-titanium transition-colors"
-          >
-            LinkedIn
-          </a>
         </div>
       </div>
 
