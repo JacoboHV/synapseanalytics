@@ -42,10 +42,15 @@ const config: Config = {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "1" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-out both",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
+        marquee: "marquee 28s linear infinite",
       },
     },
   },

@@ -1,55 +1,138 @@
 "use client";
 
-import Logo from "./Logo";
-
 export default function Footer() {
-  return (
-    <footer className="relative border-t border-hairline bg-obsidian">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-14">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-          <div>
-            <Logo size={26} />
-            <p className="mt-5 font-mono text-sm text-muted max-w-sm">
-              Stop guessing. Run the simulation.
-            </p>
-          </div>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 text-sm">
-            <a
-              href="#producto"
-              className="text-muted hover:text-titanium transition-colors"
-            >
-              Producto
-            </a>
-            <a
-              href="#sectores"
-              className="text-muted hover:text-titanium transition-colors"
-            >
-              Sectores
-            </a>
-            <a
-              href="#como-funciona"
-              className="text-muted hover:text-titanium transition-colors"
-            >
-              Cómo funciona
-            </a>
+  // Two identical groups of the wordmark → seamless infinite marquee.
+  const wordmarks = Array.from({ length: 4 });
+
+  return (
+    <footer className="relative overflow-hidden border-t border-hairline bg-obsidian">
+      {/* Top bar */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-10 pb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          {/* Have a project in mind */}
+          <div className="flex flex-col gap-3">
+            <p className="font-mono text-xs sm:text-sm tracking-widest uppercase text-titanium">
+              ¿Tienes un proyecto en mente?
+            </p>
             <a
               href="#lista-de-espera"
-              className="text-muted hover:text-titanium transition-colors"
+              className="inline-flex w-fit items-center rounded-full border border-titanium bg-titanium px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-obsidian hover:bg-accent hover:border-accent hover:text-titanium transition-colors"
             >
-              Lista de espera
+              Hablemos
             </a>
           </div>
+
+          {/* Instagram */}
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hidden md:block text-center font-mono text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
+          >
+            Instagram
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hidden md:block text-center font-mono text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
+          >
+            LinkedIn
+          </a>
+
+          {/* Back to top */}
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="group flex items-center justify-end gap-3 font-mono text-xs sm:text-sm tracking-widest uppercase text-titanium hover:text-accent transition-colors"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-titanium group-hover:border-accent group-hover:bg-accent transition-colors">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 12V2M7 2L2 7M7 2L12 7"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            Volver arriba
+          </button>
         </div>
 
-        <div className="mt-12 border-t border-hairline pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="font-mono text-xs text-muted">
-            © 2026 Synapse Analytics. Todos los derechos reservados.
-          </p>
-          <p className="font-mono text-[11px] tracking-widest uppercase text-muted">
-            Medellín · Colombia
-          </p>
+        {/* Mobile-only social links */}
+        <div className="mt-6 flex md:hidden gap-6 font-mono text-xs tracking-widest uppercase text-muted">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hover:text-titanium transition-colors"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hover:text-titanium transition-colors"
+          >
+            LinkedIn
+          </a>
         </div>
+      </div>
+
+      {/* Infinite marquee SYNAPSE with vertical gradient */}
+      <div
+        className="relative overflow-hidden"
+        aria-hidden="true"
+      >
+        <div className="flex animate-marquee whitespace-nowrap select-none pointer-events-none will-change-transform">
+          {[0, 1].map((groupIdx) => (
+            <div
+              key={groupIdx}
+              className="flex shrink-0 items-center"
+            >
+              {wordmarks.map((_, i) => (
+                <span
+                  key={`${groupIdx}-${i}`}
+                  className="font-black tracking-tightest leading-[0.85] pr-10 sm:pr-14 text-transparent bg-clip-text"
+                  style={{
+                    fontSize: "clamp(6rem, 20vw, 20rem)",
+                    letterSpacing: "-0.05em",
+                    backgroundImage:
+                      "linear-gradient(180deg, #FFFFFF 0%, #7A7A7A 55%, #1F1F1F 100%)",
+                  }}
+                >
+                  SYNAPSE
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pb-6 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <p className="font-mono text-xs text-muted underline underline-offset-4 decoration-hairline">
+          by Synapse Analytics
+        </p>
+        <p className="font-mono text-[11px] tracking-widest uppercase text-muted">
+          © 2026 · Medellín · Colombia
+        </p>
       </div>
     </footer>
   );
