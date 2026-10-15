@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Synapse Analytics — Investigación de mercados con IA",
   description:
     "Simulamos el comportamiento de compra de consumidores colombianos y te entregamos un veredicto de mercado en minutos. Stop guessing. Run the simulation.",
-  metadataBase: new URL("https://synapse-analytics.co"),
+  metadataBase: new URL("https://synapseanalytic.com"),
   openGraph: {
     title: "Synapse Analytics — Stop guessing. Run the simulation.",
     description:

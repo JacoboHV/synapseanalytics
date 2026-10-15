@@ -1,5 +1,7 @@
 "use client";
 
+import { CONTACT_EMAIL } from "@/lib/site";
+
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -90,6 +92,12 @@ export default function Footer() {
         <p className="font-mono text-xs text-muted underline underline-offset-4 decoration-hairline">
           by Synapse Analytics
         </p>
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="font-mono text-xs text-titanium hover:text-accent transition-colors"
+        >
+          {CONTACT_EMAIL}
+        </a>
         <p className="font-mono text-[11px] tracking-widest uppercase text-muted">
           © 2026 · Medellín · Colombia
         </p>
