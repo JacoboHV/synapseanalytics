@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export type WaitlistPayload = {
   name: string;
@@ -76,8 +77,7 @@ export async function joinWaitlist(
     );
     return {
       ok: false,
-      error:
-        "Estamos habilitando el registro. Escríbenos a hola@synapse-analytics.co y te sumamos manualmente.",
+      error: `Estamos habilitando el registro. Escríbenos a ${CONTACT_EMAIL} y te sumamos manualmente.`,
     };
   }
 
